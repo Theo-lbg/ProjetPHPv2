@@ -34,7 +34,7 @@
 
 
     <div id="modeles" class="menu">
-        <a href="modeles.html">PANIER</a> <!-- AJOUTER REDIRECTION PANIER PAR LA SUITE-->
+        <a href="modeles.php">PANIER</a> <!-- AJOUTER REDIRECTION PANIER PAR LA SUITE-->
     </div>
 
 </div>

@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="../ShopTY.png" />
+    <link rel="icon" href="../2_IMAGES/Bricolage.png" />
 
     <link rel="stylesheet" href="../CSS/accueil.css" />
     <link rel="stylesheet" href="../CSS/page1.css" />
@@ -21,7 +21,7 @@
 <div class="header">
 
     <a href="../HTML/accueil.html">
-        <img class="logo" src="../ShopTY.png" alt=" LOGO Boutique">
+        <img class="logo" src="../2_IMAGES/Bricolage.png" alt=" LOGO Boutique">
     </a>
 
     <div class="banniere">
@@ -30,7 +30,7 @@
 
 
     <div id="purchase_in" class="menu">
-        <a href="../PHP/login2.php">Connexion</a>
+        <a href=".php">Connexion</a>
     </div>
     <div class="purchase_border">
     </div>

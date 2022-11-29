@@ -1,0 +1,132 @@
+/* POTEZ_Alexandre / KADDOURI_Yassine */ 
+
+
+
+.espaceVideo {
+
+	position: relative;
+	display: left;
+
+	height: 550px;
+	display: grid;
+    grid-template-columns: 1fr 48fr 48fr 1fr;
+   	grid-template-rows: 8fr 1fr;
+
+}
+
+video {
+	grid-row: 1;
+	grid-column: 1/-1;
+	margin-top: -8%;
+	min-height: 300px;
+
+	z-index:-1;
+}
+ 
+.bio {
+    padding: 15px;
+	grid-row: 2;
+	grid-column: 1/-1; 
+	margin-top: -3%;
+	z-index: 2;
+	background-color: #262626;
+}
+
+.bio p{
+	padding: 10px 10%;
+}
+.bio h1{
+	padding-left: 10%;
+	text-align:left;
+}
+
+
+
+.espaceDiapo{
+	height: 480px;
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+   	grid-template-rows: 5fr 2fr 12fr 5fr;
+   	overflow: hidden;
+   	z-index: 2;
+	background-color: #262626;
+}
+
+.Boxdiapo{
+
+	height: 480px;
+	width: 640px;
+	overflow: hidden;
+
+	grid-row: 1/-1;
+	grid-column: 1;
+}
+.slides{
+	width: 2400px;
+	animation: glisse 25s infinite;
+}
+.diapo{
+		border:0px;
+	height: 480px;
+	width: 640px; 
+}
+
+@keyframes glisse{
+	0% {transform:  translatey(0px);}
+	10% {transform: translatey(0px);}
+	15% {transform: translatey(-483px);}
+	30% {transform: translatey(-483px);}
+	35% {transform: translatey(-968px);}
+	50% {transform: translatey(-968px);}
+	55% {transform: translatey(-1451px);}
+	70% {transform: translatey(-1451px);}
+	75% {transform: translatey(-1935px);}
+	90% {transform: translatey(-1935px);}
+	95% {transform: translatey(0px);}
+
+}
+
+.espaceDiapo h1{
+	grid-row: 2;
+	grid-column: 2;
+	padding-top: 20px;
+}
+.espaceDiapo p{
+	grid-row: 3;
+	grid-column: 2;
+	padding: 20px;
+	line-height: 150%;
+}
+
+
+@media only screen and (max-width: 950px) {
+    
+	.espaceDiapo{
+	height: 880px;
+    grid-template-columns: 100%;
+   	grid-template-rows: 1fr 0.2fr 0.5fr;
+ 	}
+
+ 	
+ 	.Boxdiapo{
+	grid-row: 1;
+	grid-column: 1;
+
+	}
+
+ 	.espaceDiapo h1{
+	grid-row: 2;
+	grid-column: 1;
+
+	}
+	.espaceDiapo p{
+	grid-row: 3;
+	grid-column: 1;
+	padding: 0px 10px;
+
+	}	
+@media screen and (max-width: 500px) {
+	 .Boxdiapo{
+	 transform: translateX(-70px);
+	 }
+ }

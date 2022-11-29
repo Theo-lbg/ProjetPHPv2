@@ -1,0 +1,236 @@
+/* POTEZ_Alexandre / KADDOURI_Yassine */ 
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border:0px;
+}
+
+
+html {
+	height: 100%;
+	background-color: #262626;
+}
+
+@font-face {
+font-family: 'Radicals';
+src: url('../4_polices/Radicals.eot');
+src: url('../4_polices/Radicals.svg#RadicalsBold') format('svg'),
+	 url('../4_polices/Radicals.otf') format('truetype'),
+     url('../4_polices/Radicals.woff') format('woff'),
+     url('../4_polices/Radicals.eot?#iefix') format('embedded-opentype');
+font-weight: normal;
+font-style: normal;
+}
+
+a{
+	color: #FFF;
+	padding: 0px;
+	text-decoration: none;
+}
+
+h1{
+
+	color: #FFF;
+	text-align: center;
+	font-family: "Radicals";
+	text-decoration: underline;
+}
+
+p{
+	color: #FFF;
+	text-align: justify;
+	font-size: 13px;
+	font-family: verdana;
+}
+
+.menu{
+	color: #FFF;
+	text-align:center;
+
+	font-family: verdana;
+	font-size: 1em;
+	z-index: -2;
+}
+
+.header {
+	 z-index: 0;
+	 height: 70px;
+	 display: grid;
+     grid-template-columns: 0.4fr 3fr 30.4fr 4fr 0.4fr 5fr 1fr;
+     grid-template-rows:  0.5fr 2fr 2fr 1fr 1fr;
+     background-color: #262626;
+}
+.header a{
+	grid-row:2/5;
+	grid-column: 2/3;
+	z-index: 4;
+}
+.header img{
+
+	grid-row:2/5;
+	grid-column: 2/3;
+
+	height: 100%;
+	width : 98%;
+	max-width: 70px;
+	min-width: 60px;
+}
+
+.header img:hover{
+	opacity: 0.75;
+}
+
+.banniere {
+    padding: 15px;
+	grid-row: 2/5;
+	grid-column: 1/-1;
+
+	padding-top: 8px;
+	font-size: 25px;
+
+}
+
+.purchase_border{
+
+	grid-row: 3;
+	grid-column: 6;
+
+	clip-path: polygon(92% 100%, 100% 55%, 100% 0, 0 0, 0 100%, 15% 100%, 3% 99%, 3% 14%, 96% 14%, 96% 52%, 90% 86%, 0 87%, 0 100%);
+
+	background-color: #FFF; 
+}
+
+#purchase_in{
+
+	z-index: 3;
+
+	grid-row: 3;
+	grid-column: 6;
+
+	padding: 3px 10px 0px 5px;
+}
+
+#purchase_in:hover {
+
+	animation: Blink 1s 50ms  normal ease-out forwards;
+}
+
+#purchase_in:hover a{
+
+	animation: Blink 1s 50ms  normal ease-out forwards;
+}
+
+#modeles{
+
+	grid-row: 3;
+	grid-column: 4;
+	z-index: 3;
+
+	border: 2.8px solid #FFF;
+}
+
+#modeles:hover{
+
+	animation: Blink 1s 50ms  normal ease-out forwards;
+}
+#modeles:hover a{
+
+	animation: Blink 1s 50ms  normal ease-out forwards;
+}
+
+
+@keyframes Blink{
+    0% {
+    	background-color: #FFF;
+    }
+    10% {
+    	background-color: #00000000;
+    }
+    20% {
+    	background-color: #FFF;color: #444;
+    }
+    10% {
+    	background-color: #00000000;
+    }
+    20% {
+    	background-color: #FFF;color:#FFF;
+    }
+    50% {
+    	background-color: #00000000;
+    }
+    60% {
+    	background-color: #FFF;color: #444;
+
+    }
+    70% {
+    	background-color: #00000000;color:#FFF;
+    }
+    80% {
+    	background-color: #FFF;
+
+    }
+    100% {
+    	background-color: #FFF;color: #444;
+    }
+}
+
+.footer{
+	padding-top: 20px;
+	color: #FFF;
+	text-align: center;
+	font-size: 11px;
+	font-family: verdana;
+
+}
+.footer ul{
+	list-style: none;
+}
+
+.footer li{
+	display: inline;
+	padding: 15px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    .header {
+     grid-template-columns: 0.2fr 1.5fr  2fr 3.5fr  1fr 3.5fr 2fr 1.7fr;
+     grid-template-rows:  0.5fr 2fr 2.35fr 0.3fr 1fr 0.8fr;
+	}
+
+	img.logo{
+	max-width: 50px;
+	min-width: 40px;
+	}
+	.menu{
+	font-size: 0.7em;
+	}
+
+	.banniere {
+	padding: 0px;
+
+	font-size: 100%;
+	grid-row: 3;
+	grid-column: 3/8;
+	}
+
+	.purchase_border,	#purchase_in{
+	grid-row: 5;
+	grid-column: 6;
+	}
+
+
+	#modeles{
+	grid-row: 5;
+	grid-column: 4;
+	}
+
+
+}
+
+
+/*@media screen and (max-width: 500px) {
+	 
+ }

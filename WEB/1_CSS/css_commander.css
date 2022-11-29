@@ -69,6 +69,7 @@ legend{
 .contenu{
 	width: 400px;
 	background-color: #DEDEDE00;
+	padding-top: 20%;
 
 	grid-row: 1;
 	grid-column: 2;

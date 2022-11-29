@@ -47,22 +47,29 @@
 
 <div class="contenu">
 
-<form method="post" action="#">
+<form method="post" action="verification.php">
   <fieldset class="mainBord">
 		 <legend>Connexion</legend>
 	  <br>
 		 
 		 <label for="nom">Nom Client</label> </br>
-		 <input type="text" name="nom" id="nom" placeholder="Nom Client"/>
+		 <input type="text" class="email-bt"  id="nom" placeholder="Nom Client" name="username" required/>
 		</br>
 
-		 <label for="prenom">Mots de Passe</label>  <!--  Mettre le id mots de passe si ca change rien au code -->
-		 <input type="text" name="prénom" id="prenom" placeholder="Mots de Passe"/>
+		 <label for="mdp">Mots de Passe</label>  <!--  Mettre le id mots de passe si ca change rien au code -->
+		 <input type="password" class="email-bt"  id="mdp" placeholder="Mots de Passe" name="password" required/>
 
 
-		<input type="reset" name="init"  value="Se connecter" />
+		<input class="send_bt" type="submit" id="submit"  value="LOGIN" />
 	  <br>
-		<input type="submit" name="soumission" value="S'inscire"/>
+		<input class="call_text" type="submit"  value="S'inscire"/>
+	  <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+	  }
+	  ?>
 
 	</fieldset>
 

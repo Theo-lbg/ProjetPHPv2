@@ -8,7 +8,7 @@
     <link rel="icon" href="../logoBricolage.png" />
     	
     <link rel="stylesheet" href="../1_css/css_main.css" />
-    <link rel="stylesheet" href="../1_css/css_commander.css" />
+    <link rel="stylesheet" href="../1_css/css_login.css" />
 
 
 
@@ -81,8 +81,7 @@
   <li>LebegueKaddouri © 2022</li>
   <li><a href="conseils.pdf"> Conseils d'utilisation</a></li>
 	<li><a href="0_PAGES/contact.html">Panier</a></li>   <!-- A MODIFIER ET METTRE LE PATH DE PANIER -->
-	<li><a href="0_PAGES/contact.html">Produit</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->
-  <li><a href="contact.html">Contact</a></li>
+	<li><a href="0_PAGES/contact.html">Produits</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->
 </ul>
 
 

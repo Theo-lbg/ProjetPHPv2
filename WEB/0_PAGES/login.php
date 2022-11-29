@@ -59,7 +59,7 @@
                 <input type="password" class="email-bt" id="mdp" placeholder="Mots de Passe" name="password" required/>
 
 
-                <input class="send_bt" type="submit" id="submit" value="LOGIN"/>
+                <input class="send_bt" type="submit" id="submit" value="Se connecter"/>
                 <br>
                 <input class="call_text" type="submit" value="S'inscire"/>
                 <?php

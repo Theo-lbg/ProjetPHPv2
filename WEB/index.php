@@ -37,7 +37,7 @@
 
 
 	<div id="modeles" class="menu">
-		<a href="0_PAGES/modeles.html">PANIER</a>
+		<a href="0_PAGES/panier.html">PANIER</a>
 	</div>
 
 </div>
@@ -84,7 +84,7 @@
 
 <div class="footer">
 	<ul>
-  		<li>LebegueKaddouri © 2022</li>
+  		<li>LebegueKaddouri©2022</li>
   		<li><a href="0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
 		<li><a href="0_PAGES/contact.html">Panier</a></li>   <!-- A MODIFIER ET METTRE LE PATH DE PANIER -->
 		<li><a href="0_PAGES/contact.html">Produits</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->

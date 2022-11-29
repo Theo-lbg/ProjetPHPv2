@@ -18,7 +18,7 @@
 
 <div class="header">
 
-	<a href="../index.html">
+	<a href="../index.php">
 	<img class="logo" src="../logoBricolage.png" alt=" LOGO  ">
 	</a>
 

@@ -52,28 +52,30 @@ if (isset($_GET['s']) and !empty($_GET['s']))
 
 <!-- -------------------------------------------------------------- -->
 <div class="contenu">
-    <table>
+    <table border="2">
     <?php
     if ($allarticles->rowCount() > 0) {
         while ($article = $allarticles->fetch()) {
             ?>
             <div class="item">
                 <div class="image_produit">
+                    <td>
                     <?php
                     echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
                     ?>
+                    </td>
                 </div>
                 <div class="tout">
                     <div class="nom_produit">
-                        <p>
+                        <td>
                             <?= $article['Nom_Article'] ?>
-                        </p>
+                        </td>
                     </div>
                     <div class="descprition_produit">
-                        <p><?= $article['Designation']?></p>
+                        <td><?= $article['Designation']?></td>
                     </div>
                     <div class="prix_produit">
-                        <p><?= $article['Prix_Article']?> € </p>
+                        <td><?= $article['Prix_Article']?> € </td>
                     </div>
                     <div class="bouton"><a href="index.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
                 </div>

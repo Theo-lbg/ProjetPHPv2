@@ -13,6 +13,17 @@
 
     <title> Shop Theo & Yassine </title>
 </head>
+
+<?php
+$bdd = new PDO('mysql:host=localhost; dbname=bdd_projetphpty;', 'adminty', 'adminty');
+$allarticles = $bdd->query('SELECT Reference_Article, Nom_Article, Image_Article, Prix_Article, Designation FROM article Join categorie ON ID_CAT like Cat_Article');
+if (isset($_GET['s']) and !empty($_GET['s']))
+{
+    $recherche = htmlspecialchars($_GET['s']);
+    $allarticles = $bdd->query('SELECT Reference_Article, Nom_Article, Image_Article, Prix_Article, Designation FROM article Join categorie ON ID_CAT like Cat_Article where Nom_Article likE "%' . $recherche . '%"');
+}
+?>
+
 <body>
 
 <div class="header">
@@ -38,40 +49,52 @@
     </div>
 
 </div>
+
 <!-- -------------------------------------------------------------- -->
 
+<?php
+if ($allarticles->rowCount() > 0) {
+    while ($article = $allarticles->fetch()) {
+        ?>
+        <div class="item">
+            <div class="image_produit">
+                <?php
+                echo '<img src="../images/pieces/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
+                ?>
+            </div>
+            <div class="tout">
+                <div class="nom_produit">
+                    <p>
+                        <?= $article['Nom_Article'] ?>
+                    </p>
+                </div>
+                <div class="descprition_produit">
+                    <p><?= $article['Designation']?></p>
+                </div>
+                <div class="prix_produit">
+                    <p><?= $article['Prix_Article']?> € </p>
+                </div>
+                <div class="bouton"><a href="index.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
+            </div>
+        </div>
+        <?php
+    }
+} else {
+    ?>
+    <p>Aucun article trouvé</p>
+    <?php
+}
+?>
+
+
+
+
+
+
+
+
+
 <div class="contenu">
-    <table border="2"> <!--Tableau Levante -->
-
-        <thead>
-        <th><strong>Levante<br>€ 81 250<strong></th>
-        </thead>
-
-        <tbody>
-
-        <td colspan="6"><img src="../2_IMAGES/levante.jpg" alt="Levante"/></td>
-        <tr></tr>
-
-        <td>Puissance max</td>
-        <td>Vitesse maximale</td>
-        <td>Accélération</td>
-        <td>Architecture moteur</td>
-        <td>Traction</td>
-        <td>Couple Max</td>
-        <tr></tr>
-
-        <td><strong>350 Ch</strong></td>
-        <td><strong>251 km/h</strong></td>
-        <td><strong>6,0sec</strong></td>
-        <td><strong>V6</strong></td>
-        <td><strong>AWD</strong></td>
-        <td><strong>500 Nm</strong></td>
-        <tr></tr>
-        </tbody>
-    </table>
-
-
-
 </div>
 <!-- -------------------------------------------------------------- -->
 

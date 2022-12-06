@@ -51,50 +51,42 @@ if (isset($_GET['s']) and !empty($_GET['s']))
 </div>
 
 <!-- -------------------------------------------------------------- -->
-
-<?php
-if ($allarticles->rowCount() > 0) {
-    while ($article = $allarticles->fetch()) {
+<div class="contenu">
+    <?php
+    if ($allarticles->rowCount() > 0) {
+        while ($article = $allarticles->fetch()) {
+            ?>
+            <div class="item">
+                <div class="image_produit">
+                    <?php
+                    echo '<img src="../sujet/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
+                    ?>
+                </div>
+                <div class="tout">
+                    <div class="nom_produit">
+                        <p>
+                            <?= $article['Nom_Article'] ?>
+                        </p>
+                    </div>
+                    <div class="descprition_produit">
+                        <p><?= $article['Designation']?></p>
+                    </div>
+                    <div class="prix_produit">
+                        <p><?= $article['Prix_Article']?> € </p>
+                    </div>
+                    <div class="bouton"><a href="index.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
         ?>
-        <div class="item">
-            <div class="image_produit">
-                <?php
-                echo '<img src="../images/pieces/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
-                ?>
-            </div>
-            <div class="tout">
-                <div class="nom_produit">
-                    <p>
-                        <?= $article['Nom_Article'] ?>
-                    </p>
-                </div>
-                <div class="descprition_produit">
-                    <p><?= $article['Designation']?></p>
-                </div>
-                <div class="prix_produit">
-                    <p><?= $article['Prix_Article']?> € </p>
-                </div>
-                <div class="bouton"><a href="index.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
-            </div>
-        </div>
+        <p>Aucun article trouvé</p>
         <?php
     }
-} else {
     ?>
-    <p>Aucun article trouvé</p>
-    <?php
-}
-?>
 
 
-
-
-
-
-
-
-
-<div class="contenu">
 </div>
 <!-- -------------------------------------------------------------- -->
 

@@ -62,7 +62,7 @@ if (isset($_GET['s']) and !empty($_GET['s']))
                         echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
                         ?>
                     </div>
-                    <div class="all">
+
                         <div class="nom_produit">
                             <p>
                                 <?= $article['Nom_Article'] ?>
@@ -75,7 +75,7 @@ if (isset($_GET['s']) and !empty($_GET['s']))
                             <p><?= $article['Prix_Article']?> € </p>
                         </div>
                         <div class="bouton"><a href="index.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
-                    </div>
+                    
                 </div>
                 <?php
             }

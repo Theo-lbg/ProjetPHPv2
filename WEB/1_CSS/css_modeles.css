@@ -18,7 +18,7 @@ table{
 .contenu img{ /*taille image*/
 	width: 500px;
 	height: 250px;
-	border:none;
+	border:100px;
 }
 
  td,th{ /*bord des contours des petites cases des caracteristiques*/

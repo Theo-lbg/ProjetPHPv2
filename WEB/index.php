@@ -51,6 +51,11 @@
   	</video>
 
 	<div class="bio">
+
+        <div id="modeles" class="menu">
+            <a href="0_PAGES/modeles.php">NOS PRODUITS</a>
+        </div>
+
 	  <h1> Du choix a porter de main ! </h1>
 		<p>Un choix parmis de nombreuses pièces à porter de mains juste pour vous !</p>
 	</div>

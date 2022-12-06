@@ -70,6 +70,7 @@
     </div> 
 
     <h1> Notre savoir faire mise a contribution</h1>
+
 	<p>Une qualité de produits certifiés Française ! avec un service après vente à votre disposition pour régler n'importe quel problème.Acheter des pièces automobiles de haute qualité, c'est beaucoup plus que rajouter simplement quelque chose dans votre panier. Il faut vous assurer que les pièces que vous commandez persistent dans le temps. Vous pouvez être sûr que chaque élément choisi pour votre véhicule sera soigneusement sélectionné.
 
 		Lorsque vous faites confiance à Taros Trade, vous serez convaincu que notre équipe travaillera avec vous pour votre entière satisfaction à chaque étape du processus.
@@ -78,18 +79,17 @@
 
 		Testez-nous!</p>
 
+
 </div>
 <!-- -------------------------------------------------------------- -->
-
 
 <div class="footer">
 	<ul>
   		<li>LebegueKaddouri©2022</li>
   		<li><a href="0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
-		<li><a href="0_PAGES/contact.html">Panier</a></li>   <!-- A MODIFIER ET METTRE LE PATH DE PANIER -->
-		<li><a href="0_PAGES/contact.html">Produits</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->
+		<li><a href="0_PAGES/panier.html">Panier</a></li>
+		<li><a href="0_PAGES/modeles.php">Produits</a></li>
 	</ul>
 </div>
-
 </body>
 </html>

@@ -42,7 +42,7 @@
 
 <div class="page">
 
-    <img src="../2_images/DIAPO/Levante_1.jpg"/>  <!-- Mettre une autre image jolie pour backgorund -->
+    <img src="../2_IMAGES/backgroundLogin.jpeg"/>  <!-- Mettre une autre image jolie pour backgorund -->
 
     <div class="contenu">
 
@@ -79,8 +79,8 @@
         <ul>
             <li>LebegueKaddouri©2022</li>
             <li><a href="conseils.pdf"> Conseils d'utilisation</a></li>
-            <li><a href="0_PAGES/contact.html">Panier</a></li>   <!-- A MODIFIER ET METTRE LE PATH DE PANIER -->
-            <li><a href="0_PAGES/contact.html">Produits</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->
+            <li><a href="../0_PAGES/contact.html">Panier</a></li>
+            <li><a href="../0_PAGES/modeles.php">Produits</a></li>
         </ul>
 
 

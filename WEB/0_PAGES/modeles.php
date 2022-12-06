@@ -79,9 +79,9 @@
 <div class="footer">
     <ul>
         <li>LebegueKaddouri©2022</li>
-        <li><a href="0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
-        <li><a href="0_PAGES/panier.html">Panier</a></li>   <!-- A MODIFIER ET METTRE LE PATH DE PANIER -->
-        <li><a href="0_PAGES/modeles.html">Produit</a></li>  <!-- A MODIFIER ET METTRE LE PATH DE Produit -->
+        <li><a href="../0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
+        <li><a href="../0_PAGES/panier.html">Panier</a></li>
+        <li><a href="#">Produit</a></li>
     </ul>
 </div>
 </div>

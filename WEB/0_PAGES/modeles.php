@@ -59,7 +59,7 @@ if (isset($_GET['s']) and !empty($_GET['s']))
             <div class="item">
                 <div class="image_produit">
                     <?php
-                    echo '<img src="../sujet/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
+                    echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
                     ?>
                 </div>
                 <div class="tout">

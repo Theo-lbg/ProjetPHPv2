@@ -52,6 +52,7 @@ if (isset($_GET['s']) and !empty($_GET['s']))
 
 <!-- -------------------------------------------------------------- -->
 <div class="contenu">
+    <table>
     <?php
     if ($allarticles->rowCount() > 0) {
         while ($article = $allarticles->fetch()) {
@@ -85,6 +86,7 @@ if (isset($_GET['s']) and !empty($_GET['s']))
         <?php
     }
     ?>
+    </table>
 
 
 </div>

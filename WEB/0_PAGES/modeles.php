@@ -51,12 +51,11 @@ if (isset($_GET['s']) and !empty($_GET['s']))
 </div>
 
 <!-- -------------------------------------------------------------- -->
-<div class="contenu">
         <?php
         if ($allarticles->rowCount() > 0) {
             while ($article = $allarticles->fetch()) {
                 ?>
-                <div class="item">
+                <div class="contenu">
                     <div class="image_produit">
                         <?php
                         echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
@@ -87,7 +86,6 @@ if (isset($_GET['s']) and !empty($_GET['s']))
         ?>
 
 
-</div>
 <!-- -------------------------------------------------------------- -->
 
 

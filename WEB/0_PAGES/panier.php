@@ -1,13 +1,13 @@
 <?php
    session_start();
-   include_once "verification.php";
+   include_once "../5_PHP/con_dbb.php";
 
    //supprimer les produits
    //si la variable del existe
    if(isset($_GET['del'])){
     $id_del = $_GET['del'] ;
     //suppression
-    unset($_SESSION['panier'][$id_del]);
+    unset($_SESSION['bdd_projetphpty'][$id_del]);
    }
 ?>
 
@@ -29,29 +29,6 @@
 </head>
 
 <body class="panier">
-<div class="header">
-
-    <a href="../index.php">
-        <img class="logo" src="../logoBricolage.png" alt=" LOGO ">
-    </a>
-
-    <div class="banniere">
-        <h1> Shop Theo & Yassine </h1>
-    </div>
-
-
-    <div id="purchase_in" class="menu">
-        <a href="login.php">CONNEXION</a>
-    </div>
-    <div class="purchase_border">
-    </div>
-
-
-    <div id="modeles" class="menu">
-        <a href="panier.php">PANIER</a>
-    </div>
-
-</div>
 
 
 <a href="modeles.php" class="link">Boutique</a>
@@ -68,25 +45,25 @@
         $total = 0 ;
         // liste des produits
         //récupérer les clés du tableau session
-        $ids = array_keys($_SESSION['panier']);
+        $ids = array_keys($_SESSION['bdd_projetphpty']);
         //s'il n'y a aucune clé dans le tableau
         if(empty($ids)){
             echo "Votre panier est vide";
         }else {
             //si oui
-            $article = mysqli_query($db, "SELECT * FROM products WHERE id IN (".implode(',', $ids).")");
+            $article = mysqli_query($con, "SELECT * FROM products WHERE id IN (".implode(',', $ids).")");
 
             //lise des produit avec une boucle foreach
             foreach($article as $article):
                 //calculer le total ( prix unitaire * quantité)
                 //et aditionner chaque résutats a chaque tour de boucle
-                $total = $total + $article['Prix_Article'] * $_SESSION['panier'][$article['ID_Article']] ;
+                $total = $total + $article['Prix_Article'] * $_SESSION['bdd_projetphpty'][$article['ID_Article']] ;
                 ?>
                 <tr>
                     <td><img src="project_images/<?=$article['Image_Article']?>"></td>
                     <td><?=$article['Nom_Article']?></td>
                     <td><?=$article['Prix_Article']?>€</td>
-                    <td><?=$_SESSION['panier'][$article['ID_Article']] // Quantité?></td>
+                    <td><?=$_SESSION['bdd_projetphpty'][$article['ID_Article']] // Quantité?></td>
                     <td><a href="panier.php?del=<?=$article['ID_Article']?>"><img src="delete.png"></a></td>
                 </tr>
 

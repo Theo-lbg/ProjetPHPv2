@@ -37,7 +37,7 @@
 
 
 	<div id="modeles" class="menu">
-		<a href="0_PAGES/panier.html">PANIER</a>
+		<a href="0_PAGES/panier.php">PANIER</a>
 	</div>
 
 </div>
@@ -92,7 +92,7 @@
 	<ul>
   		<li>LebegueKaddouri©2022</li>
   		<li><a href="0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
-		<li><a href="0_PAGES/panier.html">Panier</a></li>
+		<li><a href="0_PAGES/panier.php">Panier</a></li>
 		<li><a href="0_PAGES/modeles.php">Produits</a></li>
 	</ul>
 </div>

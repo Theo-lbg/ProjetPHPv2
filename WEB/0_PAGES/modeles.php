@@ -51,12 +51,12 @@ session_start() ;
         ?>
         <form action="" class="product">
             <div class="image_product">
-                <img src="project_images/<?=$row['img']?>">
+                <img src="project_images/<?=$row['Image_Article']?>">
             </div>
             <div class="content">
-                <h4 class="name"><?=$row['name']?></h4>
-                <h2 class="price"><?=$row['price']?>€</h2>
-                <a href="ajouter_panier.php?id=<?=$row['id']?>" class="id_product">Ajouter au panier</a>
+                <h4 class="name"><?=$row['Nom_Article']?></h4>
+                <h2 class="price"><?=$row['Prix_Article']?>€</h2>
+                <a href="ajouter_panier.php?id=<?=$row['ID_Article']?>" class="id_product">Ajouter au panier</a>
             </div>
         </form>
 

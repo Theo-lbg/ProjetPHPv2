@@ -74,20 +74,20 @@
             echo "Votre panier est vide";
         }else {
             //si oui
-            $products = mysqli_query($db, "SELECT * FROM products WHERE id IN (".implode(',', $ids).")");
+            $article = mysqli_query($db, "SELECT * FROM products WHERE id IN (".implode(',', $ids).")");
 
             //lise des produit avec une boucle foreach
-            foreach($products as $product):
+            foreach($article as $article):
                 //calculer le total ( prix unitaire * quantité)
                 //et aditionner chaque résutats a chaque tour de boucle
-                $total = $total + $product['price'] * $_SESSION['panier'][$product['id']] ;
+                $total = $total + $article['Prix_Article'] * $_SESSION['panier'][$article['ID_Article']] ;
                 ?>
                 <tr>
-                    <td><img src="project_images/<?=$product['img']?>"></td>
-                    <td><?=$product['name']?></td>
-                    <td><?=$product['price']?>€</td>
-                    <td><?=$_SESSION['panier'][$product['id']] // Quantité?></td>
-                    <td><a href="panier.php?del=<?=$product['id']?>"><img src="delete.png"></a></td>
+                    <td><img src="project_images/<?=$article['Image_Article']?>"></td>
+                    <td><?=$article['Nom_Article']?></td>
+                    <td><?=$article['Prix_Article']?>€</td>
+                    <td><?=$_SESSION['panier'][$article['ID_Article']] // Quantité?></td>
+                    <td><a href="panier.php?del=<?=$article['ID_Article']?>"><img src="delete.png"></a></td>
                 </tr>
 
             <?php endforeach ;} ?>

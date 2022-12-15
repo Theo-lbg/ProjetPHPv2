@@ -15,7 +15,7 @@ if(!isset($_SESSION['panier'])){
 if(isset($_GET['id'])){//si un id a été envoyé alors :
     $id = $_GET['id'] ;
     //verifier grace a l'id si le produit existe dans la base de  données
-    $produit = mysqli_query($db ,"SELECT * FROM products WHERE id = $id") ;
+    $article = mysqli_query($db ,"SELECT * FROM products WHERE id = $id") ;
     if(empty(mysqli_fetch_assoc($produit))){
         //si ce produit n'existe pas
         die("Ce produit n'existe pas");

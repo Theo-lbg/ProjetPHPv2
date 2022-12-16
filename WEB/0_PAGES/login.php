@@ -1,4 +1,35 @@
 <!DOCTYPE html>
+<?php
+// Démarrer la session
+session_start();
+// Vérifier si le formulaire a été soumis
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Récupérer les données du formulaire
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  // Vérifier les informations de connexion de l'utilisateur
+    $pdo = new PDO('mysql:host=localhost;dbname=bdd_projetphpty', 'adminty', 'adminty');
+    $stmt = $pdo->prepare('SELECT * FROM Client WHERE Nom_Client = ? AND Mdp = ?');
+  $stmt->execute([$username, $password]);
+  $user = $stmt->fetch();
+
+  if ($user) {
+    // Démarrer une session et enregistrer l'utilisateur
+    session_start();
+    $_SESSION['ID_Client'] = $user['id'];
+    $_SESSION['username'] = $user['username'];
+
+    // Rediriger l'utilisateur vers la page d'accueil
+    header('Location: ../index.php');
+    exit;
+  } else {
+    // Afficher un message d'erreur si les informations de connexion sont incorrectes en html
+    echo '<h1>Username or password is incorrect</h1>';
+
+  }
+}
+?>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -46,7 +77,7 @@
 
     <div class="contenu">
 
-        <form method="post" action="../5_PHP/verification.php">
+        <form method="post" action="">
             <fieldset class="mainBord">
                 <legend>Connexion: </legend>
                 <br>
@@ -58,13 +89,6 @@
                 <input class="send_bt" type="submit" id="submit" value="Se connecter"/>
                 <br>
                 <a href="enregistrement.php">S'inscrire</a>
-                <?php
-                if (isset($_GET['erreur'])) {
-                    $err = $_GET['erreur'];
-                    if ($err == 1 || $err == 2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>
 
             </fieldset>
 

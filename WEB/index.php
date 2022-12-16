@@ -1,5 +1,17 @@
 <!-- LEBEGUE Theo / KADDOURI_Yassine -->
+<?php
+session_start();
+$conn = mysqli_connect("localhost", "adminty", "adminty", "bdd_projetphpty");
 
+if(!empty($_SESSION["username"])){
+    $id = $_SESSION["username"];
+    $result = mysqli_query($conn, "SELECT * FROM client WHERE Nom_Client = $id");
+    $row = mysqli_fetch_assoc($result);
+}
+else{
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,7 +39,10 @@
 	<div class="banniere">
 	  <h1> Shop Theo & Yassine </h1>
 	</div>
-
+    <a><?php echo $row["name"]; ?></a>
+    <div id="out" class="menu">
+        <a href="0_PAGES/deco.php">DECONNEXION</a>
+    </div>
 
 	<div id="purchase_in" class="menu">
 		<a href="0_PAGES/login.php">CONNEXION</a>
@@ -39,6 +54,7 @@
 	<div id="modeles" class="menu">
 		<a href="0_PAGES/panier.php">PANIER</a>
 	</div>
+
 
 </div>
 <!-- -------------------------------------------------------------- -->

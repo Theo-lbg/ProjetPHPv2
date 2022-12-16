@@ -48,20 +48,16 @@
 
         <form method="post" action="../5_PHP/verification.php">
             <fieldset class="mainBord">
-                <legend>Connexion</legend>
+                <legend>Connexion: </legend>
                 <br>
-
                 <label for="nom">Nom Client</label> </br>
                 <input type="text" class="email-bt" id="nom" placeholder="Nom Client" name="username" required/>
                 </br>
-
                 <label for="mdp">Mots de Passe</label>  <!--  Mettre le id mots de passe si ca change rien au code -->
                 <input type="password" class="email-bt" id="mdp" placeholder="Mots de Passe" name="password" required/>
-
-
                 <input class="send_bt" type="submit" id="submit" value="Se connecter"/>
                 <br>
-                <input class="call_text" type="submit" value="S'inscire"/>
+                <a href="enregistrement.php">S'inscrire</a>
                 <?php
                 if (isset($_GET['erreur'])) {
                     $err = $_GET['erreur'];

@@ -79,10 +79,10 @@ echo "Connexion réussie";
     if ($allarticles->rowCount() > 0) {
     while ($article = $allarticles->fetch()) {
     ?>
-    <di class="item">
+    <div class="item">
         <div class="image_Article">
             <?php
-            echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
+            echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>';
             ?>
         </div>
 

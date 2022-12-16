@@ -30,8 +30,8 @@
                     } else {
                         echo "<nav id = 'nav'>
                         <a href='../0_PAGES/modeles.php'>Accueil</a>
-                        <a href='register'>Inscription</a>
-                        <a href='login'>Connexion</a>
+                        <a href='../0_PAGES/enregistrement.php'>Inscription</a>
+                        <a href='../0_PAGES/login.php'>Connexion</a>
                     </nav>";
                     }
                     ?>

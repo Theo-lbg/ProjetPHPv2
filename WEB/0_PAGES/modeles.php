@@ -1,5 +1,6 @@
 <?php
 session_start() ;
+$con = new DB();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,23 +8,24 @@ session_start() ;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../logoBricolage.png"/>
-    <link rel="stylesheet" href="../1_css/css_main.css"/>
     <link rel="stylesheet" href="../1_CSS/css_style.css"/>
+    <link rel="stylesheet" href="../0_PAGES/modeles.php" />
+
+
     <title> Shop Theo & Yassine </title>
 </head>
 
 
 
 <body>
-
 <!-- afficher le nombre de produit dans le panier -->
 <a href="panier.php" class="link">Panier<span><?=array_sum($_SESSION['bdd_projetphpty'])?></span></a>
 <section class="products_list">
     <?php
     //inclure la page de connexion
-    include_once "../5_PHP/con_dbb.php";
+    include_once "con_dbb.php";
     //afficher la liste des produits
-    $req = mysqli_query($con, "SELECT * FROM products");
+    $req = mysqli_query($con, "SELECT * FROM article");
     while($row = mysqli_fetch_assoc($req)){
         ?>
         <form action="" class="product">
@@ -40,15 +42,5 @@ session_start() ;
     <?php } ?>
 
 </section>
-
-<div class="footer">
-    <ul>
-        <li>LebegueKaddouri©2022</li>
-        <li><a href="../0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
-        <li><a href="panier.php">Panier</a></li>
-        <li><a href="#">Produit</a></li>
-    </ul>
-</div>
-
 </body>
 </html>

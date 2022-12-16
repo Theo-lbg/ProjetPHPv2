@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
     $_SESSION['ID_Client'] = $user['id'];
     $_SESSION['username'] = $user['username'];
+    $_SESSION['bdd_projetphpty'] = array();
 
     // Rediriger l'utilisateur vers la page d'accueil
     header('Location: ../index.php');

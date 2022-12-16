@@ -1,6 +1,6 @@
 <?php
    session_start();
-$con = new DB();
+$db = new db();
 
 include_once "../5_PHP/con_dbb.php";
 
@@ -53,7 +53,7 @@ include_once "../5_PHP/con_dbb.php";
             echo "Votre panier est vide";
         }else {
             //si oui
-            $products = mysqli_query($con, "SELECT * FROM article WHERE ID_Article IN (".implode(',', $ids).")");
+            $products = mysqli_query($db, "SELECT * FROM article WHERE ID_Article IN (".implode(',', $ids).")");
 
             //lise des produit avec une boucle foreach
             foreach($products as $product):

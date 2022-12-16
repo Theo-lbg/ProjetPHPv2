@@ -1,6 +1,6 @@
 <?php
 session_start() ;
-$con = new DB();
+$db = new db();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,7 +25,7 @@ $con = new DB();
     //inclure la page de connexion
     include_once "con_dbb.php";
     //afficher la liste des produits
-    $req = mysqli_query($con, "SELECT * FROM article");
+    $req = mysqli_query($db, "SELECT * FROM article");
     while($row = mysqli_fetch_assoc($req)){
         ?>
         <form action="" class="product">

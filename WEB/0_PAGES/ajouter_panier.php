@@ -1,5 +1,5 @@
 <?php
-$con = new DB();
+$db = new db();
 
 //inclure la page de connexion
 include_once "con_dbb.php";
@@ -17,7 +17,7 @@ if(!isset($_SESSION['bdd_projetphpty'])){
 if(isset($_GET['ID_Article'])){//si un id a été envoyé alors :
     $id = $_GET['ID_Article'] ;
     //verifier grace a l'id si le produit existe dans la base de  données
-    $produit = mysqli_query($con ,"SELECT * FROM article WHERE ID_Article = $id") ;
+    $produit = mysqli_query($db ,"SELECT * FROM article WHERE ID_Article = $id") ;
     if(empty(mysqli_fetch_assoc($produit))){
         //si ce produit n'existe pas
         die("Ce produit n'existe pas");

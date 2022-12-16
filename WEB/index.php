@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
         <a href="0_PAGES/login.php">CONNEXION</a>
     </div>
     <div id="out" class="menu">
-        <a href="0_PAGES/deco.php">DECONNEXION</a>
+        <a href="5_PHP/deco.php">DECONNEXION</a>
     </div>
     <div class="purchase_border">
     </div>

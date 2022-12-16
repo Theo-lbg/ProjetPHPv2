@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$conn = mysqli_connect("localhost", "adminty", "adminty", "bdd_projetphpty");
+$conn = mysqli_connect("localhost", "root", "", "bdd_projetphpty");
 
 if (isset($_POST["submit"])) {
     $nom = $_POST["nomclient"];

@@ -1,46 +1,134 @@
-<?php
-session_start() ;
-$db = new db();
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../logoBricolage.png"/>
-    <link rel="stylesheet" href="../1_CSS/css_style.css"/>
-    <link rel="stylesheet" href="../0_PAGES/modeles.php" />
+
+    <link rel="stylesheet" href="../1_css/css_main.css"/>
+    <link rel="stylesheet" href="../1_css/css_modeles.css"/>
 
 
     <title> Shop Theo & Yassine </title>
 </head>
 
-
+<?php
+$bdd = new PDO('mysql:host=localhost; dbname=bdd_projetphpty;', 'root', '');
+$allarticles = $bdd->query('SELECT Reference_Article, Nom_Article, Image_Article, Prix_Article, Designation FROM article Join categorie ON ID_CAT like Cat_Article');
+if (isset($_GET['s']) and !empty($_GET['s']))
+{
+    $recherche = htmlspecialchars($_GET['s']);
+    $allarticles = $bdd->query('SELECT Reference_Article, Nom_Article, Image_Article, Prix_Article, Designation FROM article Join categorie ON ID_CAT like Cat_Article where Nom_Article likE "%' . $recherche . '%"');
+}
+?>
 
 <body>
-<!-- afficher le nombre de produit dans le panier -->
-<a href="panier.php" class="link">Panier<span><?=array_sum($_SESSION['bdd_projetphpty'])?></span></a>
-<section class="products_list">
+
+<div class="header">
+
+    <a href="../index.php">
+        <img class="logo" src="../logoBricolage.png" alt=" LOGO ">
+    </a>
+
+    <div class="banniere">
+        <h1> Shop Theo & Yassine </h1>
+    </div>
+
+
+    <div id="purchase_in" class="menu">
+        <a href="login.php">CONNEXION</a>
+    </div>
+    <div class="purchase_border">
+    </div>
+
+    <div id="out" class="menu">
+        <a href="5_PHP/deco.php">DECONNEXION</a>
+    </div>
+
+
+    <div id="modeles" class="menu">
+        <a href="panier.php">PANIER</a>
+    </div>
+
+</div>
+
+<!-- -------------------------------------------------------------- -->
+<?php
+//connexion à la base de données
+$con = mysqli_connect("localhost","root","","bdd_projetphpty");
+//verifier la connexion
+if(!$con) die('Erreur : '.mysqli_connect_error());
+
+echo "Connexion réussie";
+?>
+<form action="" method="GET">
+    <input type="search" name="s" placeholder="Rechercher un article ">
+    <input type="submit" name="envoyer" >
+</form>
+<br>
+
+<div class="contenu">
     <?php
-    //inclure la page de connexion
-    include_once "con_dbb.php";
-    //afficher la liste des produits
-    $req = mysqli_query($db, "SELECT * FROM article");
-    while($row = mysqli_fetch_assoc($req)){
+    if ($allarticles->rowCount() > 0) {
+        while ($article = $allarticles->fetch()) {
+            ?>
+            <div class="item">
+                <div class="image_Article">
+                    <?php
+                    echo '<img src="../2_IMAGES/objets/' . $article['Image_Article'] . '" width="128" height="117"> </img>'
+                    ?>
+                </div>
+
+                <div class="nom_Article">
+                    <p>
+                        <?= $article['Nom_Article'] ?>
+                    </p>
+                </div>
+                <div class="descprition_Article">
+                    <p><?= $article['Designation']?></p>
+                </div>
+                <div class="prix_Article">
+                    <p><?= $article['Prix_Article']?> € </p>
+                </div>
+                <div class="bouton"><a href="panier.php?action=ajout&amp;i=C14&amp; l=Aegis Solo&amp;q=1&amp;p=49">Ajouter au panier</a></div>
+
+            </div>
+            <?php
+        }
+    } else {
         ?>
-        <form action="" class="product">
-            <div class="image_product">
-                <img src="project_images/<?=$row['Image_Article']?>">
-            </div>
-            <div class="content">
-                <h4 class="name"><?=$row['Nom_Article']?></h4>
-                <h2 class="price"><?=$row['Prix_Article']?>€</h2>
-                <a href="ajouter_panier.php?id=<?=$row['ID_Article']?>" class="id_product">Ajouter au panier</a>
-            </div>
-        </form>
+        <p>Aucun article trouvé</p>
+        <?php
+    }
+    ?>
 
-    <?php } ?>
 
-</section>
+</div>
+<!-- -------------------------------------------------------------- -->
+
+
+<div class="footer">
+    <ul>
+        <li>LebegueKaddouri©2022</li>
+        <li><a href="../0_PAGES/conseils.pdf">Conseils d'utilisation</a></li>
+        <li><a href="panier.php">Panier</a></li>
+        <li><a href="#">Produit</a></li>
+    </ul>
+</div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

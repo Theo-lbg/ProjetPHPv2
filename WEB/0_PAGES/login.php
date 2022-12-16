@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $password = $_POST['password'];
 
   // Vérifier les informations de connexion de l'utilisateur
-    $pdo = new PDO('mysql:host=localhost;dbname=bdd_projetphpty', 'adminty', 'adminty');
+    $pdo = new PDO('mysql:host=localhost;dbname=bdd_projetphpty', 'root', '');
     $stmt = $pdo->prepare('SELECT * FROM Client WHERE Nom_Client = ? AND Mdp = ?');
   $stmt->execute([$username, $password]);
   $user = $stmt->fetch();

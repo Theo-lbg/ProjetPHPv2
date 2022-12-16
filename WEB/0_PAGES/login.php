@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     <div id="modeles" class="menu">
-        <a href="modeles.php">PANIER</a> <!-- AJOUTER REDIRECTION PANIER PAR LA SUITE-->
+        <a href="panier.php">PANIER</a> <!-- AJOUTER REDIRECTION PANIER PAR LA SUITE-->
     </div>
 
 </div>

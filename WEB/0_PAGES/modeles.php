@@ -44,7 +44,7 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
     </div>
 
     <div id="out" class="menu">
-        <a href="0_PAGES/login.php?disconnect=true">DECONNEXION</a>
+        <a href="../0_PAGES/login.php?disconnect=true">DECONNEXION</a>
         <?php
         if (isset($_GET['disconnect'])) {
             session_destroy();
